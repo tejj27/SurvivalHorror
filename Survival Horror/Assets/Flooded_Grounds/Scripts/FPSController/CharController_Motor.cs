@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharController_Motor : MonoBehaviour {
 
 	public float speed = 10.0f;
-	public float sensitivity = 30.0f;
+	public float sensitivity = 100f;
 	public float WaterHeight = 15.5f;
 
 	public float Mousesensitivity = 15.0f;
@@ -16,16 +16,20 @@ public class CharController_Motor : MonoBehaviour {
 	public bool webGLRightClickRotation = true;
 	float gravity = -9.8f;
 
+	float XRotation = 0f;
 
 	void Start(){
 
 	
 		//LockCursor ();
+		
 		character = GetComponent<CharacterController> ();
 		if (Application.isEditor) {
 			webGLRightClickRotation = false;
 			sensitivity = sensitivity * 1.5f;
 		}
+
+	
 	}
 
 
@@ -43,11 +47,13 @@ public class CharController_Motor : MonoBehaviour {
 		moveFB = Input.GetAxis ("Horizontal") * speed;
 		moveLR = Input.GetAxis ("Vertical") * speed;
 
-		rotX = Input.GetAxis ("Mouse X") * sensitivity;
-		rotY = Input.GetAxis ("Mouse Y") * sensitivity;
+		rotX = Input.GetAxis ("Mouse X") * sensitivity ;
+		rotY = Input.GetAxis ("Mouse Y") * sensitivity ;
 
 		//rotX = Input.GetKey (KeyCode.Joystick1Button4);
 		//rotY = Input.GetKey (KeyCode.Joystick1Button5);
+
+
 
 		CheckForWaterHeight ();
 
@@ -70,8 +76,11 @@ public class CharController_Motor : MonoBehaviour {
 
 
 	void CameraRotation(GameObject cam, float rotX, float rotY){		
-		transform.Rotate (0, rotX * Time.deltaTime * Mousesensitivity, 0);
-		cam.transform.Rotate (-rotY * Time.deltaTime * Mousesensitivity , 0, 0);
+		transform.Rotate (0, rotX * Time.deltaTime * Mousesensitivity , 0);
+		cam.transform.Rotate (-rotY * Time.deltaTime * Mousesensitivity, 0, 0);
+		
+		XRotation -= rotY;
+		XRotation = Mathf.Clamp(XRotation, -1, 1);
 	}
 
 

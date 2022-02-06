@@ -16,11 +16,14 @@ public class MouseLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         float MouseX = Input.GetAxis("Mouse X") * Mousesensitivity * Time.deltaTime;
         float MouseY = Input.GetAxis("Mouse Y") * Mousesensitivity * Time.deltaTime;
 

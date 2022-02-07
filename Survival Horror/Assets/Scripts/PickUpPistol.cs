@@ -16,6 +16,7 @@ public class PickUpPistol : MonoBehaviour
     public GameObject GuideArrow;
     
     public GameObject ExtraCross;
+    public GameObject ThejumpTrigger;
 
 
     // Update is called once per frame
@@ -49,6 +50,8 @@ public class PickUpPistol : MonoBehaviour
                 RealPistol.SetActive(true);
                 ExtraCross.SetActive(false);
                 GuideArrow.SetActive(false);
+                ThejumpTrigger.SetActive(true);
+        
             }
         }
     }

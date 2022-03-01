@@ -13,7 +13,7 @@ public class AOpening : MonoBehaviour
 
     void Start()
     {
-        ThePlayer.GetComponent<PlayerMovement>().enabled = false;
+       // ThePlayer.GetComponent<PlayerMovement>().enabled = false;
 
         StartCoroutine(ScenePlayer());
         
@@ -29,7 +29,7 @@ public class AOpening : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         TextBox.GetComponent<Text>().text = "";
-        ThePlayer.GetComponent<PlayerMovement>().enabled = true;
+        //ThePlayer.GetComponent<PlayerMovement>().enabled = true;
 
 
     }

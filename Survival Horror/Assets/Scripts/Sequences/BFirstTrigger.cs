@@ -17,7 +17,7 @@ public class BFirstTrigger : MonoBehaviour
 
         
     
-        ThePlayer.GetComponent<PlayerMovement>().enabled = false;
+        //ThePlayer.GetComponent<PlayerMovement>().enabled = false;
         StartCoroutine(ScenePlayer());
         
     }
@@ -28,7 +28,7 @@ public class BFirstTrigger : MonoBehaviour
         TextBox.GetComponent<Text>().text = "Looks Like A weapon On that Table";
         yield return new WaitForSecondsRealtime(2.5f);
         TextBox.GetComponent<Text>().text = "";
-        ThePlayer.GetComponent<PlayerMovement>().enabled = true;
+        //ThePlayer.GetComponent<PlayerMovement>().enabled = true;
 
         TheMarker.SetActive(true);
     }

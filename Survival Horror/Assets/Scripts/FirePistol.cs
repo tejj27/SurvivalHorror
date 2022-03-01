@@ -12,6 +12,10 @@ public class FirePistol : MonoBehaviour
     public AudioSource GunFire;
 
     public bool Isfiring = false;
+
+    public float TargetDistance;
+
+    public int DamageAmount = 5;
     void Update()
     {
 
@@ -27,7 +31,18 @@ public class FirePistol : MonoBehaviour
 
     IEnumerator FiringPistol()
     {
+ 
         Isfiring = true;
+
+        RaycastHit Shot;
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out Shot))
+        {
+            TargetDistance = Shot.distance;
+            //information of Some Other Script
+            Shot.transform.SendMessage("DamageZombie", DamageAmount, SendMessageOptions.DontRequireReceiver); // Varible we are sending
+
+        }
+
         TheGun.GetComponent<Animation>().Play("PistolShot");
         MuzzleFlash.SetActive(true);
 

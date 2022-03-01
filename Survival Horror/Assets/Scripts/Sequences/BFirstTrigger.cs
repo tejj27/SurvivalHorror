@@ -14,6 +14,8 @@ public class BFirstTrigger : MonoBehaviour
     public GameObject TheMarker;
 
     void OnTriggerEnter(Collider other) {
+
+        
     
         ThePlayer.GetComponent<PlayerMovement>().enabled = false;
         StartCoroutine(ScenePlayer());

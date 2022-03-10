@@ -6,7 +6,52 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_Body_MAT
+    second: {fileID: 2100000, guid: e627ce9bce9f8bd4b8781a81a3e84c9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_EyeSpec_MAT
+    second: {fileID: 2100000, guid: a15eac9f7accfbd4ebdf61adffacb7cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_Eyes_MAT
+    second: {fileID: 2100000, guid: 796eac7d6f37a854a8deb5d6b2ee8334, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_Gown_MAT
+    second: {fileID: 2100000, guid: f66acdce4390a194996c20fc0d987aba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_Hair_MAT
+    second: {fileID: 2100000, guid: 496cdd864f6f76d498ebf02ad5f84d3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_Teeth_MAT
+    second: {fileID: 2100000, guid: b03ad6aeaf1db504e89ecc39586cd936, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_diffuse
+    second: {fileID: 2800000, guid: fd4a2297f09bd4b4badaa963414e871f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_normal
+    second: {fileID: 2800000, guid: f32827ba0f8d58d469671c03e091f494, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jill_HiMidRes_specular
+    second: {fileID: 2800000, guid: 0034eb8780a84874ab3d4f659bc7d304, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

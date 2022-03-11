@@ -615,6 +615,7 @@ GameObject:
   - component: {fileID: 7143780601753622430}
   - component: {fileID: 1975189039782285396}
   - component: {fileID: 5689673067167194322}
+  - component: {fileID: 1392305435}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -702,6 +703,20 @@ MonoBehaviour:
   - {fileID: 4583693411670815828}
   - {fileID: 5425862915842840437}
   - {fileID: 4888541089566383496}
+--- !u!114 &1392305435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143780601753622428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5449535d13cfd524493fb0f20fe039e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon_manager: {fileID: 0}
+  firerate: 15
 --- !u!1 &7143780601800169991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1253,7 @@ GameObject:
   - component: {fileID: 8114582175539653250}
   m_Layer: 7
   m_Name: 1 - Axe
-  m_TagString: Untagged
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1530,6 +1545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7143780602423270755}
   - component: {fileID: 7143780602423270754}
+  - component: {fileID: 6148010292235274360}
   m_Layer: 0
   m_Name: FP Camera
   m_TagString: Untagged
@@ -1594,6 +1610,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!95 &6148010292235274360
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143780602423270752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0b449016bbcefc45afa0857388aec15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7143780602448438980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,14 +2601,14 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 86c4898501ab8b040b432d2a924a42cb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d42201fa1ddd74b8df820204882ede, type: 3}
---- !u!1 &7143780601632612832 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100030, guid: 48d42201fa1ddd74b8df820204882ede, type: 3}
-  m_PrefabInstance: {fileID: 7143780601632581470}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7143780601632718272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400030, guid: 48d42201fa1ddd74b8df820204882ede, type: 3}
+  m_PrefabInstance: {fileID: 7143780601632581470}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7143780601632612832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100030, guid: 48d42201fa1ddd74b8df820204882ede, type: 3}
   m_PrefabInstance: {fileID: 7143780601632581470}
   m_PrefabAsset: {fileID: 0}
 --- !u!82 &2050921923041856037
@@ -3290,7 +3325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 2bd6bf150a6e08645964bd2baf2a789b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100030, guid: 2bd6bf150a6e08645964bd2baf2a789b, type: 3}
       propertyPath: m_Layer

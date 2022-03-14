@@ -20,7 +20,7 @@ public class EnemyAnimator : MonoBehaviour
         Dead();
     }
 
-    private void Walk(bool Walk)
+    public void Walk(bool Walk)
     {
         anim.SetBool(AnimationTags.WALK_PARAMETER, Walk);
     }

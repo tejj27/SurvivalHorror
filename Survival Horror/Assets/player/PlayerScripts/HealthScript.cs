@@ -9,7 +9,7 @@ public class HealthScript : MonoBehaviour
 
     private EnemyAnimator enemy_anim;
 
-    private NavMeshAgent navagent;
+    private NavMeshAgent Nav_agent;
 
     private EnemyController enemyController;
 
@@ -29,7 +29,7 @@ public class HealthScript : MonoBehaviour
         {
             enemy_anim = GetComponent<EnemyAnimator>();
             enemyController = GetComponent<EnemyController>();
-            navagent = GetComponent<NavMeshAgent>();
+            Nav_agent = GetComponent<NavMeshAgent>();
 
             //get the enemy audio
 
@@ -68,6 +68,8 @@ public class HealthScript : MonoBehaviour
             {
                 enemyController.Chase_Distance = 50f; // chase distance to higher value so he knows where player is
             }
+
+         
         }
 
         if(Health <= 0f)
@@ -76,6 +78,8 @@ public class HealthScript : MonoBehaviour
             is_Dead = true;
             
         }
+
+     
     }
 
 
@@ -84,8 +88,8 @@ public class HealthScript : MonoBehaviour
 
         if(is_Jill)
         {
-            navagent.velocity = Vector3.zero;
-            navagent.isStopped = true;
+            Nav_agent.velocity = Vector3.zero;
+            Nav_agent.isStopped = true;
             enemyController.enabled = false;
             enemy_anim.Dead();
         }

@@ -80,9 +80,8 @@ public class PlayerAttack : MonoBehaviour
                    //weapon Manager
                 if(weapon_manager.GetCurrentSelectedWeapon().Bullettype == WeaponBullettype.BULLET)
                 {
-                weapon_manager.GetCurrentSelectedWeapon().ShootAnimation();
-                BulletFired();
-
+                   weapon_manager.GetCurrentSelectedWeapon().ShootAnimation();
+                   BulletFired();
                 }
                 else
                 {

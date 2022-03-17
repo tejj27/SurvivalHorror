@@ -3445,6 +3445,7 @@ GameObject:
   - component: {fileID: 6938700656587095837}
   - component: {fileID: 7775921132117596401}
   - component: {fileID: 919132147640126707}
+  - component: {fileID: 906088031}
   m_Layer: 8
   m_Name: jill
   m_TagString: Enemy
@@ -3572,6 +3573,21 @@ MonoBehaviour:
   patrol_For_This_Time: 15
   wait_Before_Attack: 2
   attack_point: {fileID: 7740768458472903639}
+--- !u!114 &906088031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6906819187966913681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60f3ccf0fd4f0b45a0c644e541be143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  is_player: 0
+  is_Jill: 1
 --- !u!1 &6964032570558484762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,6 +3991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2310355059121703357}
+  - component: {fileID: 1510530597}
   m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
@@ -3996,6 +4013,23 @@ Transform:
   m_Father: {fileID: 3869842711266230189}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1510530597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7740768458472903639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2c3651097c18a42a2370637caca5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  Radius: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &7767939282707079138
 GameObject:
   m_ObjectHideFlags: 0

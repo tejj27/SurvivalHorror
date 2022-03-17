@@ -230,4 +230,10 @@ public class EnemyController : MonoBehaviour
             attack_point.SetActive(false);
         }
     }
+
+
+    public EnemyState enemy_State
+    {
+        get; set;
+    }
 }

@@ -6,7 +6,7 @@ public class AttackScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float damage =2f;
+    public float damage = 2f;
 
     public float Radius = 1f;
 
@@ -17,11 +17,11 @@ public class AttackScript : MonoBehaviour
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, Radius, layerMask);
 
-        if(hits.Length > 0)
+        if(hits.Length > 0f)
         {
             // that means we can hit or touch the game object'
 
-            print("We touched : " + hits[0].gameObject.tag);
+            hits[0].gameObject.GetComponent<HealthScript>().ApplyDamage(damage);
             gameObject.SetActive(false);
 
         } 

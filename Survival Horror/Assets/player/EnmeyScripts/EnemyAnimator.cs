@@ -11,13 +11,10 @@ public class EnemyAnimator : MonoBehaviour
     private void Awake() {
         anim = GetComponent<Animator>();
 
-
-
-
     }
 
     private void Start() {
-        Dead();
+    
     }
 
     public void Walk(bool Walk)
@@ -34,8 +31,8 @@ public class EnemyAnimator : MonoBehaviour
     {
         anim.SetTrigger(AnimationTags.ATTACK_TRIGGER);
     }
-      public void Dead()
+    public void Dead()
     {
-        anim.SetTrigger(AnimationTags.DEAD_TRIGGER);
+        anim.SetTrigger("Dead");
     }
 }

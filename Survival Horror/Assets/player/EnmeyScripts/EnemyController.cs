@@ -43,12 +43,16 @@ public class EnemyController : MonoBehaviour
 
     public GameObject attack_point;
 
+    private EnemyAudio enemy_audio;
+
 
     private void Awake() {
         enemy_anim = GetComponent<EnemyAnimator>();
         navagent = GetComponent<NavMeshAgent>();
 
         target = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG).transform;
+
+        enemy_audio = GetComponentInChildren<EnemyAudio>();
 
 
     } 
@@ -119,6 +123,7 @@ public class EnemyController : MonoBehaviour
             enemy_state = EnemyState.CHASE;
 
             //play spotted Audio && // Also Play animation of zombie scream
+            enemy_audio.Play_ScreamSound();
 
 
         }
@@ -194,6 +199,7 @@ public class EnemyController : MonoBehaviour
             attack_timer = 0f;
 
             //PLay attack Sound
+            enemy_audio.PlayAttackSound();
 
         }
         if(Vector3.Distance(transform.position, target.position) > attack_Distance + Chase_after_Attack_distance)

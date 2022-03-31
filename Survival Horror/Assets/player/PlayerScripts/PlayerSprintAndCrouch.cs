@@ -34,6 +34,9 @@ public class PlayerSprintAndCrouch : MonoBehaviour
     private float Sprint_step_Distance = 0.25f;
 
     private float Crouch_step_Distance = 0.5f;
+    private PlayerStats player_Stats;
+    private float sprint_Value=100f;
+    public float sprint_Treshold=10f;
 
 
     void Awake()
@@ -43,6 +46,7 @@ public class PlayerSprintAndCrouch : MonoBehaviour
         Look_Root = transform.GetChild(0);
 
         player_footsteps = GetComponentInChildren<PlayerFootSteps>();
+        player_Stats=GetComponent<PlayerStats>();
     }
 
     void Start() 
@@ -63,7 +67,10 @@ public class PlayerSprintAndCrouch : MonoBehaviour
 
     void Sprint()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && !is_crouching)
+        //if we have stamina we can sprint
+        if(sprint_Value>0f)
+        {
+            if(Input.GetKeyDown(KeyCode.LeftShift) && !is_crouching)
         {
             playerMovement.speed = Sprint_Speed;
 
@@ -72,6 +79,8 @@ public class PlayerSprintAndCrouch : MonoBehaviour
             player_footsteps.volume_Min = sprint_volume;
 
             player_footsteps.volume_Max = sprint_volume;
+            
+        }
         }
         if(Input.GetKeyUp(KeyCode.LeftShift) && !is_crouching)
         {
@@ -81,7 +90,29 @@ public class PlayerSprintAndCrouch : MonoBehaviour
             player_footsteps.volume_Min = walk_volume_min;
             player_footsteps.volume_Max = walk_volume_max;
             
+        }
+        if(Input.GetKey(KeyCode.LeftShift)&& !is_crouching)
+        {
+            sprint_Value-=sprint_Treshold*Time.deltaTime;
+            if(sprint_Value<=0f)
+            {
+                sprint_Value=0f;
+                //resst the speed and sound
+                playerMovement.speed=move_speed;
+                player_footsteps.step_Distance = Walk_step_Distance;
+                player_footsteps.volume_Min = walk_volume_min;
+                player_footsteps.volume_Max = walk_volume_max;
+            }
+            player_Stats.Display_StaminaStats(sprint_Value);
 
+        } else{
+            if(sprint_Value !=100f){
+                sprint_Value +=(sprint_Treshold/2f)*Time.deltaTime;
+                player_Stats.Display_StaminaStats(sprint_Value);
+                if(sprint_Value>100f) {
+                    sprint_Value=100f; 
+                }
+            }
         }
     }//sprint
 

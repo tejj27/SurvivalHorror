@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,7 +42,8 @@ move_Direction.y= vertical_Velocity* Time.deltaTime;
 }
 void PlayerJump()
 {
-    if(character_Controller.isGrounded &&Input.GetKeyDown(KeyCode.Space)){
+    if(character_Controller.isGrounded &&Input.GetKeyDown(KeyCode.Space))
+    {
         vertical_Velocity=jump_Force;
     }
 

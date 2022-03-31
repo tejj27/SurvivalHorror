@@ -22,6 +22,7 @@ public class HealthScript : MonoBehaviour
     private bool is_Dead;
 
     private EnemyAudio enemyaudio;
+    private PlayerStats player_Stats;
 
 
     void Awake()
@@ -40,6 +41,7 @@ public class HealthScript : MonoBehaviour
 
         if(is_player)
         {
+            player_Stats=GetComponent<PlayerStats>();
 
         }
 
@@ -63,6 +65,7 @@ public class HealthScript : MonoBehaviour
         if(is_player) 
         {
             // display the health ui value
+            player_Stats.Display_HealthStats(Health);
         }
 
         if(is_Jill)

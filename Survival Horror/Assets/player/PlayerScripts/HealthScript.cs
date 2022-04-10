@@ -100,6 +100,9 @@ public class HealthScript : MonoBehaviour
             enemy_anim.Dead();
 
             StartCoroutine(DeadSound());
+
+            //Spawn Enemies Manager
+            EnemyManager.instance.EnemyDied(true);
         }
 
         if(is_player)
@@ -111,6 +114,7 @@ public class HealthScript : MonoBehaviour
                 enemies[i].GetComponent<EnemyController>().enabled = false;
             }
             //call enemy manaager to stop spawning enemies
+            EnemyManager.instance.StopSpawning();
 
             GetComponent<PlayerMove>().enabled = false;
             GetComponent<PlayerAttack>().enabled = false;

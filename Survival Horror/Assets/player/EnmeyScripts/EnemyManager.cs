@@ -67,7 +67,7 @@ public class EnemyManager : MonoBehaviour
     IEnumerator CheckToSpawnEnemies() {
         yield return new WaitForSeconds(wait_Before_Spawn_Enemies_Time);
 
-        SpawnCannibalsZombie();
+        SpawnEnemies();
 
         StartCoroutine("CheckToSpawnEnemies");
 

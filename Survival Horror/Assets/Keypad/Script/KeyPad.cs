@@ -26,6 +26,7 @@ public class KeyPad : MonoBehaviour
     }
     public void Resume()
     {
+       
         KeyPadUI.SetActive(false);
         Time.timeScale=1f;
         GameIsPaused=false;
@@ -33,7 +34,6 @@ public class KeyPad : MonoBehaviour
     }
     void Pause()
     {
-        
         KeyPadUI.SetActive(true);
         Time.timeScale=0f;
         GameIsPaused=true;

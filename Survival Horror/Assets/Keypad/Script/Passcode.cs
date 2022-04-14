@@ -21,7 +21,11 @@ public class Passcode : MonoBehaviour
     {
         if(Nr==Code) 
         {
-          SceneManager.LoadScene(1);
+          SceneManager.LoadScene(2);
+        }
+        else
+        {
+            UiText.text="Incorrect";
         }
     }
     public void Delete()

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class MouseLookAround : MonoBehaviour
 {
+    //MouseLookBool
+    public bool CanMove = true;
+
+    public static MouseLookAround instance;
    
        // Start is called before the first frame update
     [SerializeField]
@@ -44,8 +48,12 @@ public class MouseLookAround : MonoBehaviour
      private float current_Roll_Angle;
      private int last_Look_Frame;
 
+     private void Awake() {
+        instance = this;
+     }
      void Start() 
      {
+    
         Cursor.lockState = CursorLockMode.Locked;   
      }
 
@@ -53,10 +61,15 @@ public class MouseLookAround : MonoBehaviour
      {
          LockedAndUnlockCursor();
 
-         if(Cursor.lockState == CursorLockMode.Locked)
+         if(CanMove == true)
          {
+            if(Cursor.lockState == CursorLockMode.Locked)
+            {
              lookAround();
+            }
+
          }
+
          
      }
 

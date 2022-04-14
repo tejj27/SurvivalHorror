@@ -14,6 +14,7 @@ public class PlayerMove: MonoBehaviour {
         character_Controller=GetComponent<CharacterController>();
     }
     void Update(){
+        
 		MoveThePlayer();
     }
 void MoveThePlayer(){

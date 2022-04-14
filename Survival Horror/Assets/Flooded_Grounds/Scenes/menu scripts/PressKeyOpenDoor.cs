@@ -5,6 +5,9 @@ using UnityEngine;
 public class PressKeyOpenDoor : MonoBehaviour
 {
     public GameObject Instruction;
+
+    bool IsInteracting;
+
     public GameObject AnimeObject;
     public bool Action=false;
 
@@ -15,29 +18,42 @@ public class PressKeyOpenDoor : MonoBehaviour
         
     }
     void OnTriggerEnter(Collider collision) {
-        if(collision.transform.tag=="Player")
+        IsInteracting = true;
+        if(collision.gameObject.tag=="Player")
         {
-            Instruction.SetActive(true);
-            Action=true;
+           if(IsInteracting == true)
+           {
+                InstructionToggle(true);
+           }
+
+        
         }
+
+       
     }
     void OnTriggerExit(Collider collision) {
-        Instruction.SetActive(false);
-        Action=false;
+        InstructionToggle(false);
     }
     // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            if(Action==true)
-            {
-                Instruction.SetActive(false);
-                
-                Action=false;
-            }
-                
-        }
+     void InstructionToggle(bool Active)
+     {
+         Instruction.SetActive(Active);
+         Action = Active;
      }
         
+    private void Update() {
+        if(IsInteracting == true)
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Keypad");
+                KeyPad.instance.Pausekeypad();
+                InstructionToggle(false);
+                GameObject Canvas = GameObject.Find("CrossHair");
+                Canvas.SetActive(false);
+
+            }
+        }
+        
+    }
 }

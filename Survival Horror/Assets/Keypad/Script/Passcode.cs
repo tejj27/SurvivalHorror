@@ -21,7 +21,7 @@ public class Passcode : MonoBehaviour
     {
         if(Nr==Code) 
         {
-          SceneManager.LoadScene(2);
+          SceneManager.LoadScene(3);
         }
         else
         {

@@ -4,6 +4,7 @@ using UnityEngine;
 public class NoteAppear : MonoBehaviour
 {
     public GameObject Image;
+    public GameObject clue;
 
     bool IsInteracting;
 
@@ -14,6 +15,7 @@ public class NoteAppear : MonoBehaviour
     void Start()
     {
         Image.SetActive(false);
+        clue.SetActive(false);
         
     }
     void OnTriggerEnter(Collider collision) {
@@ -37,8 +39,9 @@ public class NoteAppear : MonoBehaviour
     // Update is called once per frame
      void InstructionToggle(bool Active)
      {
-         Image.SetActive(Active);
-         Actions = Active;
+        clue.SetActive(Active);
+        Image.SetActive(Active);
+        Actions = Active;
      }
    
         

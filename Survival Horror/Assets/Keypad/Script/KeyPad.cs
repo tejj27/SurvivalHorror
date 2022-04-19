@@ -40,7 +40,7 @@ public class KeyPad : MonoBehaviour
         Time.timeScale=1f;
         GameIsPaused=false;
         MouseLookAround.instance.CanMove = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.None;
 
     }
     public void Pausekeypad()
@@ -49,7 +49,7 @@ public class KeyPad : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused=true;
         MouseLookAround.instance.CanMove = false;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
 }

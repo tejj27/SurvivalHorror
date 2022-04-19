@@ -51,6 +51,7 @@ public class PressKeyOpenDoor : MonoBehaviour
                 InstructionToggle(false);
                 GameObject Canvas = GameObject.Find("CrossHair");
                 Canvas.SetActive(false);
+                Cursor.lockState=CursorLockMode.None;
 
             }
         }

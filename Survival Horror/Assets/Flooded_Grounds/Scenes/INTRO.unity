@@ -675,7 +675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: I need to get out no matter what.....
+  m_Text: I need to get out of here no matter what.....
 --- !u!222 &1533816416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -953,7 +953,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How do you say...Dead Corpses
+  m_Text: How do you say...Dead Corpses??
 --- !u!222 &2137785450
 CanvasRenderer:
   m_ObjectHideFlags: 0
